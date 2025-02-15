@@ -64,5 +64,8 @@ This project is freely available for use and modification as needed. 🚀
 
 ---
 
+![심플줌예시](https://github.com/user-attachments/assets/5095ac36-fce3-411c-b033-c7564632cbf6)
+
+
 Run **SimpleZoom** now and easily magnify your screen! 🔍😊
 
