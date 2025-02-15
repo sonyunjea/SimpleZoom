@@ -1,0 +1,2 @@
+# SimpleZoom
+Screen Magnification Program
