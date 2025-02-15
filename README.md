@@ -63,6 +63,7 @@ self.fixed_region = (NEW_X1, NEW_Y1, NEW_X2, NEW_Y2)
 This project is freely available for use and modification as needed. 🚀
 
 ---
+![image](https://github.com/user-attachments/assets/fad3a71d-b441-4188-afc5-c898a399c45a)
 
 Run **SimpleZoom** now and easily magnify your screen! 🔍😊
 
