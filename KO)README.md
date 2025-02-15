@@ -63,5 +63,7 @@ self.fixed_region = (새로운_X1, 새로운_Y1, 새로운_X2, 새로운_Y2)
 이 프로젝트는 자유롭게 사용 가능하며, 필요에 따라 수정하여 사용하셔도 됩니다. 🚀
 
 ---
+![심플줌예시](https://github.com/user-attachments/assets/1435e574-5b72-477c-ae5f-4710c71fbfd5)
+
 
 이제 **SimpleZoom**을 실행하여 편리하게 화면을 확대해 보세요! 🔍😊
