@@ -1,71 +1,56 @@
-# **SimpleZoom - Screen Magnification Program**
+# SimpleZoom
 
-## **📌 Introduction**
-SimpleZoom is a lightweight screen magnification program that enlarges a specific region of the screen by 2x.
-It captures a fixed coordinate area in real-time, magnifies it, and provides transparency control.
-
----
-
-## **📜 Key Features**
-✅ **2x magnification feature**  
-✅ **Fixed coordinate magnification (x: 1650, y: 810 → x: 1919, y: 1079)**  
-✅ **Real-time magnification updates (every 100ms)**  
-✅ **Adjustable transparency**  
-✅ **Exit program with the ESC key**  
-✅ **Zoom in/out using the mouse wheel**  
+“SimpleZoom”은 실시간 화면 확대 및 해상도 선택 기능을 제공하는 간단한 Python/Tkinter 기반 프로그램입니다.  
+사용자는 원하는 해상도를 선택하고, 지정한 화면 좌표를 기준으로 고배율 확대 이미지를 실시간으로 확인할 수 있습니다.  
+또한 마우스 위치 및 확대 배율 정보를 동시에 표시하여 디버깅 및 모니터링 환경을 지원합니다.
 
 ---
 
-## **💻 How to Use**
-### **1️⃣ Running the Program**
-To run SimpleZoom in a Python-installed environment, enter the following command:
-```sh
-python simplezoom.py
-```
+## 주요 기능
 
-### **2️⃣ Shortcut Keys**
-| Shortcut Key    | Description |
-|----------------|----------------|
-| `ESC` Key | Exit the program |
-| `Mouse Wheel Up` | Increase magnification (+0.1) |
-| `Mouse Wheel Down` | Decrease magnification (-0.1) |
-| `Transparency Slider` | Adjust transparency of the magnified screen |
+- **다양한 해상도 선택**  
+  - 버튼 클릭으로 팝업 창을 열어 원하는 해상도(예: 1920×1080, 1680×1050, 1600×900 등)를 선택  
+  - 선택 즉시 메인 창 크기(확대창 크기)가 변경되고, 화면 캡처 및 확대 비율에 반영
 
----
+- **실시간 화면 캡처 및 확대**  
+  - 지정한 왼쪽 상단 좌표(X, Y) 기준으로 `win_width/ratio × win_height/ratio` 영역을 캡처  
+  - 캡처된 이미지를 선택 해상도로 리사이즈하여 0.1초마다 갱신  
+  - 확대 배율(Zoom) 은 마우스 휠로 조절(±0.1 단위, 최저 1.0배)
 
-## **📦 Required Packages**
-The following packages are required. If they are not installed, please install them before running the program.
+- **마우스 위치 실시간 표시**  
+  - 화면 어디에서든 마우스를 움직이면, 현재 커서 좌표(X, Y)를 “마우스 위치” 라벨에 즉시 업데이트
 
-```sh
-pip install pillow pyautogui
-```
+- **창 투명도 조절**  
+  - 슬라이더를 통해 창 투명도를 0.1~1.0 사이에서 조절  
+  - 다른 창 위에 반투명으로 올려놓고 동시에 모니터링 가능
 
----
+- **간편한 좌표 입력**  
+  - 메인 창 상단에 두 개의 입력칸을 두어 “X 좌표” 및 “Y 좌표”를 직접 입력  
+  - 입력한 좌표값이 음수이거나 비정수인 경우 자동으로 0으로 보정
 
-## **🔧 Changing Settings**
-By default, the magnification area is set to **(x: 1650, y: 810, x: 1919, y: 1079)**.  
-If you want to use different coordinates, modify the **`self.fixed_region` value** in the `simplezoom.py` file.
-
-```python
-self.fixed_region = (NEW_X1, NEW_Y1, NEW_X2, NEW_Y2)
-```
+- **ESC 키로 종료**  
+  - 메인 창이 포커스를 가질 때 ESC 키를 누르면 즉시 프로그램 종료
 
 ---
 
-## **📌 Notes**
-- This program has been tested only on Windows.
-- It uses the `pyautogui` and `Pillow` libraries to capture and magnify the screen.
-- Adjustments may be required for multi-monitor environments.
+## 요구 사항
+
+- Python 3.7 이상
+- Windows, macOS, Linux 등 화면 캡처가 가능한 플랫폼
+- 다음 Python 라이브러리:
+  - [`tkinter`](https://docs.python.org/3/library/tkinter.html) (표준 라이브러리 내장)
+  - [`Pillow`](https://pypi.org/project/Pillow/) (`pip install Pillow`)
+  - [`pyautogui`](https://pypi.org/project/PyAutoGUI/) (`pip install pyautogui`)
+
+> **참고**  
+> - macOS에서는 보안 설정에서 화면 녹화 권한을 부여해야 `ImageGrab.grab()`이 정상 작동합니다.  
+> - Linux 환경에서는 `Pillow`의 `ImageGrab`이 지원되지 않을 수 있으므로, 대체 방법(예: `mss` 라이브러리)을 고려해야 합니다.
 
 ---
 
-## **📜 License**
-This project is freely available for use and modification as needed. 🚀
+## 설치 및 실행 방법
 
----
-
-![심플줌예시](https://github.com/user-attachments/assets/5095ac36-fce3-411c-b033-c7564632cbf6)
-
-
-Run **SimpleZoom** now and easily magnify your screen! 🔍😊
-
+1. Python 3.7 이상이 설치되어 있는지 확인합니다.
+2. 필요한 라이브러리를 설치합니다:
+   ```bash
+   pip install Pillow pyautogui
